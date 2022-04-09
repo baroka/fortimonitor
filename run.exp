@@ -1,0 +1,11 @@
+#!/usr/bin/expect
+ set ip [lindex $argv 0]
+ set user [lindex $argv 1]
+ set password [lindex $argv 2]
+
+spawn /opt/forticlient/vpn  --server=$ip --user=$user -p
+expect "password:"
+send "$password\r"
+expect -ex "Confirm (y/n) \[default=n\]:Confirm (y/n) \[default=n\]:"
+send "y\r"
+interact  
