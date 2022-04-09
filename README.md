@@ -38,13 +38,4 @@ INSTALLATION
 - $DOCKERDIR points to your local path for add scripts and work directory persist. 
 - IP, PORT, USER and PASSWORD are variables for Forticlient access. 
 - DOMAIN variable for Samba access. 
-
-----------------------------
-
-#docker exec -t fortimonitor ./home/scripts/log_monitor_fijo.sh
-
-#TODO 1 -> obtener último bak de proyecto y enviarlo
-#TODO 2 -> revisar registrocaidas
-#TODO 3 -> bucle scripts
-#TODO 4 -> si da error la conexión forticlient o telegram  :: > /dev/null 2>&1
 ```
