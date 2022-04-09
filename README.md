@@ -1,3 +1,4 @@
+```shell
 Docker image for Forticlient with Samba 
 
 PREREQUISITES
@@ -42,7 +43,8 @@ INSTALLATION
 
 #docker exec -t fortimonitor ./home/scripts/log_monitor_fijo.sh
 
-#TODO 1 -> obtener último bak de proyecto y enviarlo
+#TODO 1 -> obtener Ãºltimo bak de proyecto y enviarlo
 #TODO 2 -> revisar registrocaidas
 #TODO 3 -> bucle scripts
-#TODO 4 -> si da error la conexión forticlient o telegram  :: > /dev/null 2>&1
+#TODO 4 -> si da error la conexiÃ³n forticlient o telegram  :: > /dev/null 2>&1
+```
