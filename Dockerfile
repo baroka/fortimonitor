@@ -9,7 +9,7 @@ RUN chmod a+x entrypoint.sh
 COPY run.exp .
 
 # Install packages
-RUN apt-get update && apt-get -y install smbclient vim iputils-ping
+RUN apt-get update && apt-get -y install smbclient vim iputils-ping jq
 
 # Timezone (no prompt)
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
