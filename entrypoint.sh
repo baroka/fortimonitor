@@ -2,5 +2,7 @@
 # Entrypoint for fortimonitor
 echo "fortimonitor start.."
 
-# docker logs
-tail -f /var/log/fortimonitor.log
+sh /home/scripts/init.sh &
+
+# Openfortipvn start from config file
+openfortivpn -c /etc/openfortivpn/config

@@ -20,22 +20,21 @@ INSTALLATION
       - t2_proxy   
     security_opt:
       - no-new-privileges:true      
-#   ports:      
-#     - 10443:10443
     volumes:
+      - $DOCKERDIR/fortimonitor/config/config:/etc/openfortivpn/config
       - $DOCKERDIR/fortimonitor/scripts:/home/scripts
       - $DOCKERDIR/fortimonitor/work:/home/work
     environment:
       - TZ=$TZ
       - PGID=$PGID
-      - PUID=$PUID 
-      - IP=
-      - PORT= 
-      - DOMAIN=
-      - USER= 
-      - PASSWORD=     
+      - PUID=$PUID   
 
-- $DOCKERDIR points to your local path for add scripts and work directory persist. 
-- IP, PORT, USER and PASSWORD are variables for Forticlient access. 
-- DOMAIN variable for Samba access. 
+- config forticlient file example: 
+  host = xxx
+  port = xxx
+  username = xxx
+  password = xxx
+  trusted-cert = xxx
+
+- Needs init scripts at /home/scripts/init.sh (can be anything)
 ```
