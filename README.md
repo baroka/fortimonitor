@@ -15,7 +15,7 @@ INSTALLATION
     cap_add:
       - net_admin
     devices:
-      - /dev/net/tun
+      - /dev/ppp
     networks:
       - t2_proxy   
     security_opt:
