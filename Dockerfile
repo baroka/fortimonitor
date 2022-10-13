@@ -10,7 +10,7 @@ COPY entrypoint.sh .
 RUN chmod a+x entrypoint.sh
 
 # Install packages
-RUN apt-get update && apt-get -y install openfortivpn smbclient vim iputils-ping jq curl
+RUN apt-get update && apt-get -y install openfortivpn smbclient vim iputils-ping jq curl iproute2
 
 # Timezone (no prompt)
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
