@@ -20,8 +20,5 @@ RUN echo "$tz" > /etc/timezone
 RUN rm -f /etc/localtime
 RUN dpkg-reconfigure -f noninteractive tzdata
 
-# Delete
-RUN rm -rf /var/lib/apt/lists
-
 # Run the command on container startup
 ENTRYPOINT ["/work/entrypoint.sh"]
