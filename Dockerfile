@@ -10,7 +10,8 @@ COPY entrypoint.sh .
 RUN chmod a+x entrypoint.sh
 
 # Install packages
-RUN apt-get update && apt-get install -y openfortivpn smbclient iputils-ping jq curl iproute2
+RUN apt-get update && apt-get install -y openfortivpn openssh-client iputils-ping jq curl iproute2
+# smbclient
 
 # Timezone (no prompt)
 ARG TZ "Europe/Madrid"
