@@ -3,15 +3,16 @@
 
 FROM ubuntu:latest
 
-WORKDIR /work
+WORKDIR /openforti
 
 # Copy entrypoint script
 COPY entrypoint.sh .
 RUN chmod a+x entrypoint.sh
 
 # Install packages
-RUN apt-get update && apt-get install -y openfortivpn openssh-client sshpass iputils-ping jq curl iproute2
-# smbclient
+RUN apt-get update && apt-get install -y openfortivpn openssh-client sshpass iputils-ping jq curl iproute2 \
+    pass-extension-otp && \
+    apt-get clean
 
 # Timezone (no prompt)
 ARG TZ "Europe/Madrid"
@@ -22,4 +23,4 @@ RUN rm -f /etc/localtime
 RUN dpkg-reconfigure -f noninteractive tzdata
 
 # Run the command on container startup
-ENTRYPOINT ["/work/entrypoint.sh"]
+ENTRYPOINT ["/openforti/entrypoint.sh"]

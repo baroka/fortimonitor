@@ -1,5 +1,5 @@
 ```shell
-Docker image for Forticlient with Samba 
+Docker image for Forticlient with FTP 
 
 PREREQUISITES
  - Docker installed
@@ -22,6 +22,8 @@ INSTALLATION
       - no-new-privileges:true      
     volumes:
       - $DOCKERDIR/fortimonitor/config/config:/etc/openfortivpn/config
+      - $DOCKERDIR/fortimonitor/config/known_hosts:/root/.ssh/known_hosts
+      - $DOCKERDIR/fortimonitor/config/totp-secret:/tmp/totp-secret
       - $DOCKERDIR/fortimonitor/scripts:/home/scripts
       - $DOCKERDIR/fortimonitor/work:/home/work
     environment:
@@ -35,6 +37,7 @@ INSTALLATION
   username = xxx
   password = xxx
   trusted-cert = xxx
+  otp = xxx [optional]
 
 - Needs init scripts at /home/scripts/init.sh (can be anything)
 ```
