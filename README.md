@@ -31,7 +31,7 @@ INSTALLATION
       - TZ=$TZ
       - PGID=$PGID
       - PUID=$PUID  
-      - GPGID=$GPGID
+      - GPGID=$GPGID # Generate with: gpg --full-generate-key (without passphrase) and save .gnupg dir
 
 - config forticlient file example: 
   host = xxx
