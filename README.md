@@ -24,12 +24,14 @@ INSTALLATION
       - $DOCKERDIR/fortimonitor/config/config:/etc/openfortivpn/config
       - $DOCKERDIR/fortimonitor/config/known_hosts:/root/.ssh/known_hosts
       - $DOCKERDIR/fortimonitor/config/totp-secret:/tmp/totp-secret
+      - $DOCKERDIR/fortimonitor/config/gnupg:/root/.gnupg
       - $DOCKERDIR/fortimonitor/scripts:/home/scripts
       - $DOCKERDIR/fortimonitor/work:/home/work
     environment:
       - TZ=$TZ
       - PGID=$PGID
-      - PUID=$PUID   
+      - PUID=$PUID  
+      - GPGID=$GPGID
 
 - config forticlient file example: 
   host = xxx
