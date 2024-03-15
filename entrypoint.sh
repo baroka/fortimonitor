@@ -20,7 +20,7 @@ echo "fortimonitor start.."
 sh /home/scripts/init.sh &
 
 # OTP token
-#get_otp_token
+get_otp_token
 
 # Openfortipvn start from config file
 openfortivpn -c /etc/openfortivpn/config
