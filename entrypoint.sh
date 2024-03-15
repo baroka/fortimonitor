@@ -10,7 +10,7 @@ get_otp_token() {
 	if grep -q "^$PARAM" $CONFIG
 	then
 		pass otp insert totp-secret < $OTP
-		pass=`pass otp totp-secret`
+		pass=`pass otp totp-secret $pass-name`
 		sed -i "/^$PARAM/c\\$PARAM$pass" $CONFIG
 	fi
 }
