@@ -1,9 +1,10 @@
 #!/bin/sh
 # Entrypoint for fortimonitor
 
+CONFIG="/etc/openfortivpn/config"
+
 # Check if OTP token is enabled and set it
 get_otp_token() {
-	local CONFIG="/etc/openfortivpn/config"
 	local OTP="/tmp/totp-secret"
 	local PARAM="otp = "
 	
@@ -21,7 +22,7 @@ echo "fortimonitor start.."
 sh /home/scripts/init.sh &
 
 # OTP token
-get_otp_token
+#get_otp_token
 
 # Openfortipvn start from config file
-openfortivpn -c /etc/openfortivpn/config
+openfortivpn -c $CONFIG
