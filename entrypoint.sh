@@ -5,6 +5,7 @@ CONFIG="/etc/openfortivpn/config"
 
 # Check if OTP token is enabled and set it
 get_otp_token() {
+	local TEMP="/tmp/config"
 	local OTP="/tmp/totp-secret"
 	local PARAM="otp = "
 	
@@ -13,7 +14,9 @@ get_otp_token() {
 		pass init $GPGID
 		pass otp insert totp-secret < $OTP
 		pass=`pass otp totp-secret`
-		sed -i "/^$PARAM/c\\$PARAM$pass" $CONFIG
+		cp $CONFIG $TEMP
+		sed -i "/^$PARAM/c\\$PARAM$pass" $TEMP
+		cp -f $TEMP $CONFIG
 	fi
 }
 
