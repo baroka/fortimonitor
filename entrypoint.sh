@@ -12,4 +12,6 @@ then
 fi
 
 # Openfortipvn start from config file
-openfortivpn -c $CONFIG && sh /home/scripts/init.sh &
+sh /home/scripts/init.sh &
+
+openfortivpn -c $CONFIG
