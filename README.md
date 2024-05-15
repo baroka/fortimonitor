@@ -40,6 +40,4 @@ INSTALLATION
   password = xxx
   trusted-cert = xxx
   otp = xxx [optional]
-
-- Needs init scripts at /home/scripts/init.sh (can be anything)
 ```

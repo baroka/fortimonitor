@@ -18,9 +18,13 @@ RUN echo "$tz" > /etc/timezone
 RUN rm -f /etc/localtime
 #RUN dpkg-reconfigure -f noninteractive tzdata
 
-# Copy entrypoint script
+# Copy scripts
 COPY entrypoint.sh .
 RUN chmod a+x entrypoint.sh
+COPY init.sh /home/scripts/
+RUN chmod a+x /home/scripts/init.sh
+COPY otp.sh /home/scripts/
+RUN chmod a+x /home/scripts/otp.sh
 
 # Run the command on container startup
 ENTRYPOINT ["/openforti/entrypoint.sh"]
