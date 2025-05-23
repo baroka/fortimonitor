@@ -8,10 +8,13 @@ echo "fortimonitor start.."
 # Check if OTP token is enabled and set it
 if grep -q "^$PARAM" $CONFIG
 then
-	sh /home/scripts/otp.sh
-	# /etc/openfortivpn/config
-	#esperar a que fichero modificado durante x segundos 
-	#sino se vuelve a ejecutar
+	find=''
+	while [ -z "$find" ]; do
+		find=`find $CONFIG -mmin -1 -type f -print`
+		if [ -n "$find" ]; then
+			sh /home/scripts/otp.sh
+		fi
+	done
 fi
 
 # Openfortipvn start from config file
