@@ -9,6 +9,9 @@ echo "fortimonitor start.."
 if grep -q "^$PARAM" $CONFIG
 then
 	sh /home/scripts/otp.sh
+	# /etc/openfortivpn/config
+	#esperar a que fichero modificado durante x segundos 
+	#sino se vuelve a ejecutar
 fi
 
 # Openfortipvn start from config file
