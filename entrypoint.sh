@@ -10,10 +10,8 @@ if grep -q "^$PARAM" $CONFIG
 then
 	find=''
 	while [ -z "$find" ]; do
+		sh /home/scripts/otp.sh
 		find=`find $CONFIG -mmin -1 -type f -print`
-		if [ -n "$find" ]; then
-			sh /home/scripts/otp.sh
-		fi
 	done
 fi
 
